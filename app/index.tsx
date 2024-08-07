@@ -1,15 +1,12 @@
-import { Text, View } from "react-native";
+import { View, Text, SafeAreaView, Platform } from 'react-native'
+import React from 'react'
 
-export default function Index() {
+const Home = () => {
   return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <Text>Edit app/index.tsx to edit this screen.</Text>
-    </View>
-  );
+    <SafeAreaView style={Platform.OS == 'android' && {paddingTop: 40}} className='bg-red-500 '>
+      <Text className='text-3xl text-center'>Home</Text>
+    </SafeAreaView>
+  )
 }
+
+export default Home;
